@@ -1,0 +1,34 @@
+#Solution1A
+#Download -> Change file name -> See directory 
+
+#coding in AWS account
+wget http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-10-shell-programming--triplet-stop.sh
+mv chapter-10-shell-programming--triplet-stop.sh triplet-stop.sh
+ls
+
+
+#Solution1B
+chmod u+x triplet-stop.sh 
+cp triplet-stop.sh newtristop.sh 
+nano ./newtristop.sh 
+
+#in nano interface for newtristop.sh 
+
+      #!/bin/bash 
+      # save as triplet-stop.sh 3 
+      # splits a sequence into triplets 
+      x=0
+      while [ -n "${1:$x:3}" ]; do #while function to read the sequence of 3 words (taa,agg) 
+      seq=$seq${1:$x:3}" " #x is a sequence from 1 to 3
+      x=$(expr $x + 3) 
+
+      #conditional formatting text = taa, $x number of words greater(-gt) than 9
+      if [[ ${1:$x:3} == taa ]] && [[ $x -gt 9 ]]; then 
+      break #stop if condition fulfilled
+      fi 
+      done 
+      echo "$seq" #write the sequence
+
+#back in aws linux
+#test the program with following test code
+./newtristop.sh ggggggtaagggtaaggg 
