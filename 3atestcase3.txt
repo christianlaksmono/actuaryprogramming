@@ -1,0 +1,14 @@
+zerospace
+ onespace
+  twospace
+   threespace
+    fourspace
+o ne
+t  wo
+t   hree
+f    our
+3Atestcase
+one one one
+two  two  two
+three   three   three
+one two  three   end

@@ -1,0 +1,11 @@
+abcgenase
+hydro
+genase
+hydrogenase
+dehydro
+dehydrogenase
+hydrogenase is matched
+dehydrogenase is omitted 
+hydrogenase dehydrogenase
+word is hydrogenase 
+word is hydrogenase dehydrogenase
