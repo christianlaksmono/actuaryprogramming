@@ -1,0 +1,18 @@
+#Question 2 
+#SOLUTION 2a 
+#open file from iLearn and save it on notepad 
+#upload that file into AWS account 
+
+#at your local directory
+  #copying files tutes.txt to my aws account
+scp -i 45531056.pem tutes.txt ubuntu@ec2-13-210-35-37.ap-southeast-2.compute.amazonaws.com:
+
+#SOLUTION 2b 
+
+#at your AWS account
+cat tutes.txt #see what's inside the file
+    #apply this change 1) change everything to small word 2) sort by alphabet 3) Count data variation
+cat tutes.txt | tr '[:upper:]' '[:lower:]' | sort | uniq -c
+    #in order to sort variation from most to less add sort -nr function
+cat tutes.txt | tr '[:upper:]' '[:lower:]' | sort | uniq -c | sort -nr
+
