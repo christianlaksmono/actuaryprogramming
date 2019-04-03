@@ -1,0 +1,50 @@
+#Question 3 
+
+#Solution 3A
+  #at your local directory
+    #upload test case that has been created -> 3atestcase.txt 
+      
+scp -i 45531056.pem 3atestcase3.txt ubuntu@ec2-13-210-35-37.ap-southeast-2.compute.amazonaws.com:
+    
+  #at your linux AWS
+    #awk is a script language; ‘NF==3’ is a command to keeps a count of the number of fields with the current input equal to 3
+    # where the input is 3atestcase3.txt 
+
+awk ‘NF==3’ 3atestcase3.txt 
+
+#Solution 3B
+  #at your local directory
+    #upload test case that has been created -> 3btestcase2.txt 
+    
+scp -i 45531056.pem 3btestcase2.txt ubuntu@ec2-13-210-35-37.ap-southeast-2.compute.amazonaws.com:
+
+  #at your linux AWS
+    # -o is used to remove the decimals -E to tell the system if ‘–‘ isn’t switch indicator
+    # \-[0-9]+ is to classify the selected number is negative integer. 
+egrep -oE '\-[0-9]+' 3btestcase2.txt 
+
+#Solution 3C
+   #at your local directory
+    #upload test case that has been created -> 3ctestcase.txt 
+    
+scp -i 45531056.pem 3ctestcase.txt ubuntu@ec2-13-210-35-37.ap-southeast-2.compute.amazonaws.com:
+
+  #at your linux AWS
+    #-Ei because we want the minus sign to be in the final result 
+    #‘[0-9]+\.[0-9]+’ means that I want to find a pattern of 0.0 (0 is a symbol) 
+
+grep -Ei '[0-9]+\.[0-9]+' 3ctestcase.txt
+
+#Solution 3D
+  #at your local directory
+    #upload test case that has been created -> 3dtestcase.txt
+    
+scp -i 45531056.pem 3dtestcase.txt ubuntu@ec2-13-210-35-37.ap-southeast-2.compute.amazonaws.com:
+
+ #at your linux AWS
+    #find data with exact word (-w) hydrogenase at 3dtestcase.txt, 
+    #afterthat from all the result find the line which contain dehydrogenase and invert it
+    #so we will get the result which is NOT containing dehydrogenase because of invert (-v) process
+
+grep -w 'hydrogenase' 3dtestcase.txt | grep -v 'dehydrogenase'
+
