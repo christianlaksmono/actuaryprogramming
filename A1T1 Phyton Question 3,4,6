@@ -1,0 +1,24 @@
+#Question 3 
+
+>>> def is_leap_year(a):
+...     if a % 4 == 0 :	#a mod 4 check if it’s 0 or not 
+...             return 'is leap year'	#if it’s leap year write “is leap year” 
+...     return 'is not leap year'		#else “ is not leap year” 
+
+
+#Question 4 
+
+>>> def integer_ab(a,b):	#create a function with 2 integer a,b as input
+...     import random	#import random package from python
+...     c=random.randint(a,b)	#in var c, create a random integer between a and b
+...     print(c)	#print the results 
+
+
+#Question 6
+
+>>> def p_r_t(p,r,t):	#create a variable to contain principal,interest rate,years
+...     from math import exp	#import math package and exponential function 
+...     x = p * exp ( r * t )	#represent Pert
+...     print(x)	#print the result 
+...
+
