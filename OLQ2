@@ -1,0 +1,48 @@
+#Question 1 
+
+  #Download the program structure.pdb 
+    #in your linux aws instance
+  wget http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb  
+  
+    #Change all Beisel to Weisel
+  sed -e 's/Beisel/Weisel/' structure.pdb
+  
+#Question 2 
+
+    #Delete the first three lines of the file 
+  sed -e '1,3d’ structure.pdb
+  
+#Question 3
+
+    #print lines 5-10 
+  sed -n '5,10p' structure.pdb
+  
+#Question 4 
+    #Delete All line with MET 
+  sed '/MET/d' structure.pdb
+  
+#Question 5 
+    #Print all line where Helix Line contain ILE
+  sed -n '/HELIX.*ILE/p' structure.pdb
+  
+#Question 6 
+    #Append 3 stars at the end of line started with H
+  sed -e '/^H/s/$/***/' structure.pdb
+  
+#Question 7 
+    #Replace lines containing SEQRES with SEQ 
+  sed '/SEQRES/s/^.*$/SEQ/' structure.pdb
+  
+#Question 8
+    #Download Jabberwocky to your pc folder 
+    #Upload it to your Linux using 
+ scp -i 45531056.pem jabberwocky.txt ubuntu@ec2-13-210-35-37.ap-southeast-2.compute.amazonaws.com:
+ 
+    #Try this, if empty space is not filled with space / tab it would be running 
+    
+ sed '/^$/d'  jabberwocky.txt 
+ 
+    #as you can see the syntax is not working that mean the empty space is contain them
+    #Instead use this, which replace all tab & space as well 
+    
+ sed '/^[[:space:]]*$/d' jabberwocky.txt   
