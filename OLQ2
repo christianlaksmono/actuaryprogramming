@@ -3,6 +3,8 @@
   #Download the program structure.pdb 
     #in your linux aws instance
   wget http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb  
+    #rename the downloaded file chapter-11-regex--structure.pdb into structure.pdb
+  mv chapter-11-regex--structure.pdb structure.pdb 
   
     #Change all Beisel to Weisel
   sed -e 's/Beisel/Weisel/' structure.pdb
